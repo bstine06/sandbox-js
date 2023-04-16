@@ -24,6 +24,40 @@ function toggleColor() {
     document.getElementById("myH1").style = "color:"+color;
 }
 
+/*showcase #2 login prompt*/
+
+const buttonPromptLogin = document.getElementById("promptLogin");
+
+buttonPromptLogin.addEventListener(
+    "click",
+    function() {
+        promptLogin();
+    },
+    false  
+);
+
+function promptLogin() {
+    let username = prompt("Enter your username:");
+    let password;
+    if (username === "Admin") {
+        password = prompt("Enter your password");
+        if (password === "TheMaster") {
+            alert("Welcome!");
+        } else if (password === null || password === ""){
+            alert("Canceled");
+        } else {
+            alert("Wrong password");
+        }
+    } else if (username === null || username === "") {
+        alert("Canceled");
+    } else {
+        alert("I don't know you");
+    };
+    //alert(password);
+}
+
+
+
 
 
 

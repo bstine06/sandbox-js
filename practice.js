@@ -56,6 +56,58 @@ function promptLogin() {
     //alert(password);
 }
 
+/*showcase #3 functions practice*/
+
+let funcsInput1 = document.getElementById("input1");
+let funcsInput2 = document.getElementById("input2");
+let funcsSelect = document.getElementById('funcs-select');
+let funcsButton = document.getElementById('funcs-button');
+let funcsOutput = document.getElementById("funcs-output");
+
+funcsSelect.addEventListener(
+    "change",
+    () => {
+        funcsInput2.hidden = (funcsSelect.value === "Multiply") ? false : true;
+    }
+)
+
+funcsButton.addEventListener(
+    "click", 
+    function() {
+        let val1 = funcsInput1.value;
+        let val2 = funcsInput2.value;
+        switch (funcsSelect.value) {
+            case "Add 7": 
+                funcsOutput.textContent= add7(val1);
+                break;
+            case "Multiply":
+                funcsOutput.textContent= multiply(val1,val2);
+                break;
+            case "Capitalize":
+                funcsOutput.textContent= capitalize(val1);
+                break;
+            case "Last Letter":
+                funcsOutput.textContent= lastLetter(val1);
+                break;
+        }
+    }
+);
+
+function add7(num1) {
+    return +num1+7;
+}
+
+function multiply(num1, num2) {
+    return +num1 * +num2;
+}
+
+function capitalize(word) {
+    return word.toUpperCase();
+}
+
+function lastLetter(word) {
+    return word.substr(-1);
+}
 
 
 

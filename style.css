@@ -70,3 +70,27 @@ button:hover {
     font-weight: 200;
     font-size : 14px;
 }
+
+.horizontal-split {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+
+.vertical-split {
+    display: flex;
+    flex-direction: column;
+}
+
+.centered-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#color-display {
+    width: 100px;
+    height: 100px;
+}

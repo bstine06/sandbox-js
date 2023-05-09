@@ -112,17 +112,36 @@ function lastLetter(word) {
 /* showcase #4 More DOM Manipulation */
 
 const rgbSliders = document.querySelectorAll('.rgb-slider');
+const colorDisplay = document.querySelector('#color-display');
+colorDisplay.style.backgroundColor = 'rgb(255,255,255)';
 for (let rgbSlider of rgbSliders) {
     rgbSlider.addEventListener('input', 
         () => {
             const color = rgbSlider.id.split("-")[0];
-            const colorIdSelector = `#${color}-text`;
-            const colorText = document.querySelector(colorIdSelector);
+            const colorText = document.querySelector(`#${color}-text`);
             colorText.textContent = rgbSlider.value;
+            colorDisplay.style.backgroundColor = 
+                updateColor(colorDisplay.style.backgroundColor, color, rgbSlider.value);
         }
     )
 }
 
+function updateColor(currentColor, color, value) {
+    colorsArray = currentColor.split(",");
+    console.log(colorsArray);
+    colorsArray[0] = colorsArray[0].split("(")[1];
+    colorsArray[2] = colorsArray[2].split(")")[0];
+    console.log(colorsArray);
+    console.log(color);
+    let index = 0;
+    switch (color) {
+        case "red":  index = 0; break;
+        case "green":index = 1; break;
+        case "blue": index = 2; break;
+    }
+    colorsArray[index] = value;
+    return `rgb(${colorsArray[0]},${colorsArray[1]},${colorsArray[2]})`;
+}
 
 
 

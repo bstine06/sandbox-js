@@ -51,12 +51,19 @@
       <div class = "showcase">
         <div class="description">More DOM Manipulation</div>
         <div class="description-2">RGB Slider</div>
-        <input class="rgb-slider" id="red-slider" type="range" min="0" max="100" value="100">
-        <div class="description-2 rgb-text" id="red-text">100</div>
-        <input class="rgb-slider" id="green-slider" type="range" min="0" max="100" value="100">
-        <div class="description-2 rgb-text" id="green-text">100</div>
-        <input class="rgb-slider" id="blue-slider" type="range" min="0" max="100" value="100">
-        <div class="description-2 rgb-text" id="blue-text">100</div>
+        <div class="horizontal-split">
+          <div class="vertical-split">
+            <input class="rgb-slider" id="red-slider" type="range" min="0" max="255" value="255">
+            <div class="description-2 rgb-text" id="red-text">100</div>
+            <input class="rgb-slider" id="green-slider" type="range" min="0" max="255" value="255">
+            <div class="description-2 rgb-text" id="green-text">100</div>
+            <input class="rgb-slider" id="blue-slider" type="range" min="0" max="255" value="255">
+            <div class="description-2 rgb-text" id="blue-text">100</div>
+          </div>
+          <div class="centered-content">
+            <div id="color-display"></div>
+          </div>
+        </div>
       </div>
       
     </div>

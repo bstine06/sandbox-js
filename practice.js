@@ -109,6 +109,21 @@ function lastLetter(word) {
     return word.substr(-1);
 }
 
+/* showcase #4 More DOM Manipulation */
+
+const rgbSliders = document.querySelectorAll('.rgb-slider');
+for (let rgbSlider of rgbSliders) {
+    rgbSlider.addEventListener('input', 
+        () => {
+            const color = rgbSlider.id.split("-")[0];
+            const colorIdSelector = `#${color}-text`;
+            const colorText = document.querySelector(colorIdSelector);
+            colorText.textContent = rgbSlider.value;
+        }
+    )
+}
+
+
 
 
 
